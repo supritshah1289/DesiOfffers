@@ -1,5 +1,5 @@
 import React                from 'react';
-import {View, Text, Image}         from 'react-native';
+import {View, Text, Image, Button}         from 'react-native';
 import HomePage             from '../Home';
 import ListItem             from '../ListItem';
 import Message              from '../Message';
@@ -8,13 +8,45 @@ import Setting              from '../Setting';
 import Ionicons             from 'react-native-vector-icons/Ionicons';
 import {TabNavigator, 
         TabBarBottom, 
-        TabBarTop
+        TabBarTop,
+        StackNavigator
         }                      from 'react-navigation';
+import Browse               from '../BrowseCategory';
+import Invite               from '../Invite';
+
+const HeaderStack = StackNavigator(
+    {
+      Browse: {
+        screen: Browse,
+      },
+      Invite: {
+        screen: Invite,
+      },
+    },
+    {
+      navigationOptions: {
+        headerStyle: {
+          backgroundColor: '#734fb3',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerRight: <Button
+        title="Browse"
+        onPress={ () => params.handleRefresh() } />,
+
+        headerLeft: <Button
+        title="Invite"
+        onPress={ () => params.handleRefresh() } />
+      },
+    }
+  );
 
 
 export default TabNavigator(
-    {
-        Home: {screen: HomePage},
+    {   
+        Home: {screen: HeaderStack},
         Message:{screen: Message},
         'List Item': {screen: ListItem},
         'My Offer': {screen: MyOffer},
@@ -55,6 +87,9 @@ export default TabNavigator(
         tabBarOptions: {
             activeTintColor: 'tomato',
             inactiveTintColor: 'gray',
+            style: {
+                backgroundColor: '#734fb3',
+              }
         },
         tabBarComponent: TabBarBottom,
         tabBarPosition: 'bottom',

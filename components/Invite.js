@@ -3,6 +3,10 @@ import { View, Text }            from 'react-native';
 
 
 class Invite extends React.Component{
+    static navigationOptions = {
+        title: 'Invite',
+      };
+      
     render(){
         return(
             <View style={{flex: 1, alignItems: 'center', alignContent: 'center', paddingTop: 20}}>

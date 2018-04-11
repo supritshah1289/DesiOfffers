@@ -11,16 +11,16 @@ import { StackNavigator, TabBarBottom } from 'react-navigation';
 export default StackNavigator(
     {
      Browse: {screen: BrowseCategory},
-     Invite: {screen: Invite},
     },
-
     {
-        tabBarOptions: {
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
+        navigationOptions:{
+            headerStyle:{
+                backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle:{
+                fontWeight: 'bold',
+            },
         },
-        tabBarPosition: 'top',
-        animationEnabled: false,
-        swipeEnabled: false,
     }
 );

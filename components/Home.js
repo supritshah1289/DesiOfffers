@@ -4,6 +4,10 @@ import HeaderNav            from './nav/HeaderNav';
 
 
 class Home extends React.Component{
+    static navigationOptions = {
+        title: 'Desified',
+      };
+      
     render(){
         return(
             <View style={{ flex: 1, justifyContent:'center', alignItems: 'center'}}> 
