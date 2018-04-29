@@ -5,7 +5,6 @@ import ListItem             from '../ListItem';
 import Message              from '../Message';
 import MyOffer              from '../MyOffer';
 import Setting              from '../Setting';
-import Ionicons             from 'react-native-vector-icons/Ionicons';
 import {TabNavigator, 
         TabBarBottom, 
         TabBarTop,
@@ -34,10 +33,12 @@ const HeaderStack = StackNavigator(
         },
         headerRight: <Button
         title="Browse"
+        color="white"
         onPress={ () => params.handleRefresh() } />,
 
         headerLeft: <Button
         title="Invite"
+        color="white"
         onPress={ () => params.handleRefresh() } />
       },
     }
